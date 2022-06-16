@@ -33,12 +33,16 @@ import { ftp } from './gulp/tasks/ftp.js';
 // Change watcher
 function watcher() {
     gulp.watch(path.watch.files, copy);
+    //For automatic FTP deploy on changes uncomment following:
     // gulp.watch(path.watch.html, gulp.series(html, ftp));
     gulp.watch(path.watch.html, html);
+    //For automatic FTP deploy on changes uncomment following:
     // gulp.watch(path.watch.scss, gulp.series(scss, ftp));
     gulp.watch(path.watch.scss, scss);
+    //For automatic FTP deploy on changes uncomment following:
     // gulp.watch(path.watch.js, gulp.series(js, ftp));
     gulp.watch(path.watch.js, js);
+    //For automatic FTP deploy on changes uncomment following:
     // gulp.watch(path.watch.images, gulp.series(images, ftp));
     gulp.watch(path.watch.images, images);
 }
