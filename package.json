@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
+    "build": "gulp build --build",
     "svgSprite": "gulp sprite"
   },
   "author": "Grin",

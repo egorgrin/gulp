@@ -48,6 +48,11 @@ const mainTasks = gulp.series(
 
 // Creating task runner scenario
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
+const build = gulp.series(reset, mainTasks);
+
+//Scenario export
+export {dev};
+export {build};
 
 // Default scenario
 gulp.task('default', dev);
