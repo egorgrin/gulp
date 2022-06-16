@@ -35,5 +35,5 @@ export const path = {
     buildFolder: buildFolder,
     srcFolder: srcFolder,
     rootFolder: rootFolder,
-    ftp: ``,
+    ftp: `host1839268.hostland.pro/htdocs/gulp-test`,
 };

@@ -27,13 +27,19 @@ import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
 import { otfToTff, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 import { sprite } from './gulp/tasks/svgSprite.js';
+import { zip } from './gulp/tasks/zip.js';
+import { ftp } from './gulp/tasks/ftp.js';
 
 // Change watcher
 function watcher() {
     gulp.watch(path.watch.files, copy);
+    // gulp.watch(path.watch.html, gulp.series(html, ftp));
     gulp.watch(path.watch.html, html);
+    // gulp.watch(path.watch.scss, gulp.series(scss, ftp));
     gulp.watch(path.watch.scss, scss);
+    // gulp.watch(path.watch.js, gulp.series(js, ftp));
     gulp.watch(path.watch.js, js);
+    // gulp.watch(path.watch.images, gulp.series(images, ftp));
     gulp.watch(path.watch.images, images);
 }
 
@@ -49,10 +55,14 @@ const mainTasks = gulp.series(
 // Creating task runner scenario
 const dev = gulp.series(reset, mainTasks, gulp.parallel(server, watcher));
 const build = gulp.series(reset, mainTasks);
+const deployZip = gulp.series(reset, mainTasks, zip);
+const deployFtp = gulp.series(reset, mainTasks, ftp);
 
 //Scenario export
 export {dev};
 export {build};
+export {deployZip};
+export {deployFtp};
 
 // Default scenario
 gulp.task('default', dev);

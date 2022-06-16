@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --build",
+    "zip": "gulp deployZip --build",
+    "deploy": "gulp deployFtp --build",
     "svgSprite": "gulp sprite"
   },
   "author": "Grin",
@@ -30,12 +32,15 @@
     "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-ttf2woff2": "^4.0.1",
+    "gulp-util": "^3.0.8",
     "gulp-version-number": "^0.2.4",
     "gulp-webp": "^4.0.1",
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
+    "gulp-zip": "^5.1.0",
     "sass": "^1.52.3",
-    "webp-converter": "^2.2.3",
+    "vinyl-ftp": "^0.6.1",
+    "webp-converter": "2.2.3",
     "webpack": "^5.73.0",
     "webpack-stream": "^7.0.0"
   }
